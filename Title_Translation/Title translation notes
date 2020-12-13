@@ -1,0 +1,57 @@
+Title translation notes 
+
+MT: Machine Translation 
+
+Data Collection: 
+-Internal / Vendor 
+
+Data Processing: 
+-Data cleaning
+-Tokenization 
+-Lowercase 
+-Subword encoding 
+
+Model Development: 
+-Statistical MT 
+-Neural MT 
+
+Offline evaluation:
+-Human Evaluation 
+-Compare with Google and human
+
+Tokenization: 
+Traditional Chinese (Jieba)
+English (white space/ moses tokenizer)
+
+Subword: 
+-Sentencepiece
+-BPE(fastBPE)
+
+LSTM and Convolutional seq2seq 
+
+Transformer Model (Current good model) [Strongly encouraged]
+
+Frameworks: 
+TensorFlow - tensor2tensor, Nematus, OpenNMT-tf 
+
+Supervised MT: 
+Labelled parallel(source, target) translation data (paired data)
+
+Unsupervised MT: no labelled pairs, only abundant monolingual data from source and target languages 
+
+Word2vec: Words occurring in similar contexts tend to have similar meanings 
+
+Continuous word embedding spaces exhibit similar structures across languages, even when considering distant language pairs like English and Vietnamese 
+
+Idea is to learn a mapping function from a source to a target embedding space 
+
+A simple linear mapping achieves the best translation result on word translation task, with a parallel vocabulary of 5000 words as anchor points 
+
+Look up word translation without Parallel Data 
+
+General steps in Unsupervised Machine Translation: 
+Initialization - Inferred bilingual dictionary 
+
+Language Modeling - Leverage strong language models, via training the seq2seq system as a de-noising auto-encoder 
+
+Iterative back-translation - Turn the unsupervised problem into a supervised one by automatic generation of sentence pairs via back-translation 
